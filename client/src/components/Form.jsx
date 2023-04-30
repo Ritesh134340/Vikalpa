@@ -16,7 +16,14 @@ const Form = () => {
  
  const handleFormSubmit=(e)=>{
   e.preventDefault()
-
+  if(phone.length<10 || isNaN(phone)){
+    alert("Invalid mobile number")
+    return ;
+  }
+  if(isNaN(roll)){
+    alert("Invalid roll number")
+    return 
+  }
   if(name,phone,roll,address,studentClass,school){
     axios.post("http://localhost:8080/api/student/data",{name:name,phone:phone,rollno:roll,address:address,studentClass:studentClass,school:school})
     .then((res)=>{

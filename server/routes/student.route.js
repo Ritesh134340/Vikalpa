@@ -30,6 +30,7 @@ student.get("/registered/data/:phone",(req,res)=>{
    })
 })
 
+
 student.post("/data", (req, res) => {
   const q =
     "INSERT INTO students (name,studentClass,phone,school,rollno,address) VALUES(?,?,?,?,?,?)";
